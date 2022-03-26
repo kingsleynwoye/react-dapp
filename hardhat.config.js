@@ -17,13 +17,16 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
  * @type import('hardhat/config').HardhatUserConfig
  */
 module.exports = {
-  solidity: "0.8.4",
+  defaultNetwork: "hardhat",
   paths: {
     artifacts: './src/artifacts'
   },
   networks: {
-    hardhat: {
-      chainId: 1337
+    hardhat: {},
+    ropsten: {
+      url: "https://ropsten.infura.io/v3/c453d1c15d20408a9f127dd81cb47f58",
+      accounts: [`0x${'1d7d59cfc0f5ca812ae35f54d3fd1c181b14a65d573dced12162726480226ce3'}`]
     }
-  }
+  },
+  solidity: "0.8.4"
 };
